@@ -44,7 +44,7 @@
         margin: 14px 0;
     }
     h2{
-        font-size: var(--font-regular);
+        font-size: var(--font-medium);
         font-weight: var(--weight-semi-bold);
         columns: var(--color-black);
         margin: 8px 0;
@@ -201,4 +201,183 @@
     }
     .skillset{
         display: flex;
+        background-color: var(--color-light-gray);
+        color: var(--color-light-white);
+        margin: 20px 0;
+    }
+    .skillset_title{
+        color: var(--color-white);
+    }
+    .skillset_left{
+        flex-basis: 60%;
+        background-color: var(--color-dark-gray);
+        padding: 20px 40px;
+    }
+    .skill_description{
+        display: flex;
+        justify-content: space-between;
+    }
+    .skill{
+        margin: 32px;
+    }
+    .skill_bar{
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-gray);
+    }
+    .skill_value{
+        width: 70%;
+        height: 3px;
+        background-color: var(--color-orange);
+    }
+    .skillset_right{
+        flex-basis: 40%;
+    }
+    .tools{
+        background-color: var(--color-gray);
+    }
+    .tools, .languages{
+        padding: 20px;
+    }
+
+/* work */
+    .work_categories{
+        margin: 40px;
+    }
+    .category_btn{
+        border: 1px solid var(--color-dark-gray);
+        border-radius: var(--size-border-radius);
+        font-size: var(--font-regular);
+        padding: 8px 48px;
+    }
+    .category_btn.active,
+    .category_btn:hover{
+        background-color: var(--color-pink);
+        color: var(--color-white);
+    }
+    .category_btn.active .category_count,
+    .category_btn:hover .category_count{
+        opacity: 1;
+        top: 0;
+    }
+    .category_count{
+        background-color: var(--color-orange);
+        border-radius: 50%;
+        color: var(--color-white);
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        line-height: 24px;
+        margin-left: 15px;
+        position: relative;
+        top: -20px;
+        left: 4px;
+        opacity: 0;
+        transition: all var(--animation-duration) ease-in;
+    }
+    .work_projects{
+        display: flex;
+        flex-wrap: wrap;/* item 꽉 차면 자동 줄바꿈 */
+        justify-content: center;
+    }
+    .project{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 280px;
+        height: 250px;
+        margin: 2px;
+        background-color: var(--color-light-white);
+    }
+    .project_img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .project_description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all var(--animation-duration) ease-in;
+    }
+    .project:hover .project_description{
+        opacity: 0.8;
+        transform: translateY(0px);
+    }
+    .project_description h3{
+        color: var(--color-white);
+    }
+    .project_description h3:after{
+        content: '';
+        position: relative;
+        left: 50%;
+        display: block;
+        width: 25px;
+        height: 2px;
+        margin-left: -12px;
+        margin-top: 8px;
+        background-color: var(--color-dark-white);
+    }
+/* testimonial */
+    #testimonials{
+        background-color: var(--color-light-white);
+    }
+    .testimonials{
+        margin: 40px;
+    }
+    .testimonial{
+        display: flex;
+        margin: 32px 0;
+    }
+    .testimonial_avatar{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 12px;
+    }
+    .testimonial_avatar:nth-child(odd){
+        margin-right: 40px;
+    }
+    .testimonial_avatar:nth-child(even){
+        margin-left: 40px;
+    }
+    .testimonial_speech-bubble{
+        padding: 18px;
+        background-color: var(--color-white);
+        border-radius: var(--size-border-radius);
+    }
+    .testimonial_speech-bubble p{
+        color: var(--color-light-gray);
+    }
+    .testimonial_speech-bubble a{
+        color: var(--color-pink);
+    }
+
+/* contact */
+    #contact{
+        background-color: var(--color-pink);
+    }
+    .contact_title, .contact_on{
+        color: var(--color-white);
+    }
+    .contact_title{
+        margin: 32px 0;
+    }
+    .contact_links{
+        font-size: var(--font-large);
+        margin: 24px 0;
+        
+    }
+    .contact_links i:hover{
+        transform: scale(1.3);
+        transition: all var(--animation-duration) ease-in;
+        color: var(--color-yellow);
     }

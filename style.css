@@ -87,9 +87,11 @@
 
 /* navbar */
     #navbar{
+        position: fixed;
+        width: 100%;
         display: flex; 
         justify-content: space-between;
-        background-color: var(--color-pink);
+        background-color: transparent;
         align-items: center;
         color: var(--color-white);
         padding: 16px;
@@ -128,6 +130,7 @@
         background-color: #eeaeab;
         padding: 40px;
         text-align: center;
+        padding-top: 12 0px;
     }
     .home_avatar{
         width: 150px;
@@ -195,6 +198,10 @@
     }
     .job_name, .job_period{
         color: var(--color-light-gray);
+    }
+    .job_logo{
+        width: 300px;
+        height: 150px;
     }
     .job_name{
         font-size: var(--font-small);

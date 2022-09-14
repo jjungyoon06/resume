@@ -11,7 +11,7 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// 메뉴, 컨택트미 누르면 스크롤되기 (html에 data-linkk="" 추가수정완료)
+// navbar-menu 누르면 스크롤되기 (html에 data-link="" 추가수정완료)
 const navbarMenu = document.querySelector('.navbar_menu');
 navbarMenu.addEventListener('click',(event)=>{
      const target = event.target;
@@ -19,7 +19,24 @@ navbarMenu.addEventListener('click',(event)=>{
      if(link == null){
         return;
      }
-
-     const scrollTo = document.querySelector(link);
-     scrollTo.scrollIntoView({behavior:'smooth'});
+   scrollIntoView(link);
 });
+
+// contact 누르면 스크롤 되기
+const contactMe = document.querySelector('.home_contact');
+contactMe.addEventListener('click',()=>{
+    scrollIntoView('#contact');
+});
+
+// 반복되니까 함수 설정으로 정리하고 위에 호출하기
+function scrollIntoView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+}
+
+// 스크롤 내려갈수록 Home 점점 투명하게 하기
+const home = document.querySelector('#home');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll',()=>{
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+})

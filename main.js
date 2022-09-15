@@ -1,6 +1,6 @@
 'use strict';
 
-// Make navbar transparent when it is on the top
+// navbar 투명하다가 스크롤하면 색 나오게 하기
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
@@ -11,7 +11,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// navbar menu 클릭 시 이동
 const navbarMenu = document.querySelector('.navbar_menu');
 navbarMenu.addEventListener('click', (event) => {
   const target = event.target;
@@ -23,26 +23,26 @@ navbarMenu.addEventListener('click', (event) => {
   scrollIntoView(link);
 });
 
-// Navbar toggle button for small screen
+// Navbar 토글
 const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
-// Handle click on "contact me" button on home
+// 컨택 버튼 클릭 이벤트
 const homeContactBtn = document.querySelector('.home_contact');
 homeContactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
 });
 
-// Make home slowly fade to transparent as the window scrolls down
+// 스크롤 할 때 홈 투명하게
 const home = document.querySelector('.home_container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-// Show "arrow up" button when scrolling down
+// 화살표 스크롤
 const arrowUp = document.querySelector('.arrow-up');
 document.addEventListener('scroll', () => {
   if (window.scrollY > homeHeight / 2) {
@@ -52,12 +52,12 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// Handle click on the "arrow up" button
+// 화살표 클릭
 arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
-// Projects
+// 플젝
 const workBtnContainer = document.querySelector('.work_categories');
 const projectContainer = document.querySelector('.work_projects');
 const projects = document.querySelectorAll('.project');
@@ -67,7 +67,7 @@ workBtnContainer.addEventListener('click', (e) => {
     return;
   }
 
-  // Remove selection from the previous item and select the new one
+  // 플젝 필터
   const active = document.querySelector('.category_btn.selected');
   if (active != null) {
     active.classList.remove('selected');
@@ -87,6 +87,7 @@ workBtnContainer.addEventListener('click', (e) => {
     projectContainer.classList.remove('anim-out');
   }, 300);
 });
+
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);

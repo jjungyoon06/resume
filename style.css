@@ -117,8 +117,10 @@
         margin: 0 4px;
         color: var(--color-white);
         cursor: pointer;
-        border: 1px solid transparent;
         border-radius: var(--size-border-radius);
+    }
+    .navbar_menu_item.active{
+        border: 1px solid white;
     }
     .navbar_menu_item:hover{
         border-color: var(--color-white);
